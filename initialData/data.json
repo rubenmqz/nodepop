@@ -1,0 +1,39 @@
+{
+  "anuncios": [
+    {
+      "nombre": "Bicicleta",
+      "venta": true,
+      "precio": 230.15,
+      "foto": "bici.jpg",
+      "tags": [ "lifestyle", "motor"]
+    },
+    {
+      "nombre": "iPhone 3GS",
+      "venta": false,
+      "precio": 50.00,
+      "foto": "iphone.png",
+      "tags": [ "lifestyle", "mobile"]
+    },
+    {
+      "nombre": "Furgoneta Renault Express",
+      "venta": true,
+      "precio": 2500.00,
+      "foto": "furgoneta.png",
+      "tags": [ "work", "motor"]
+    },
+    {
+      "nombre": "Pulsera Pandora",
+      "venta": false,
+      "precio": 30.00,
+      "foto": "pulsera.png",
+      "tags": [ "lifestyle"]
+    }
+  ],
+  "usuarios": [
+    {
+      "nombre": "admin",
+      "email": "admin@admin.com",
+      "clave": "admin"
+    }
+  ]
+}
