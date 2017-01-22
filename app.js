@@ -10,6 +10,24 @@ var users = require('./routes/users');
 
 var app = express();
 
+// Base de datos y modelos
+require('./lib/connectMongoose');
+require('./models/Anuncio');
+
+//Pruebas bd
+const mongoose = require('mongoose');
+const Anuncio = mongoose.model('Anuncio');
+
+const anuncio = new Anuncio({"nombre": "Pepe", "apellidos": "Lopez"});
+
+anuncio.save(function(err, anuncioCreado) {
+    if (err) {
+        console.log("error");
+    }
+    console.log (anuncioCreado);
+});
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
