@@ -5,7 +5,7 @@
       "venta": true,
       "precio": 230.15,
       "foto": "bici.jpg",
-      "tags": [ "lifestyle", "motor"]
+      "tags": [ "lifestyle"]
     },
     {
       "nombre": "iPhone 3GS",
@@ -26,6 +26,34 @@
       "venta": false,
       "precio": 30.00,
       "foto": "pulsera.jpg",
+      "tags": [ "lifestyle"]
+    },
+    {
+      "nombre": "Bicicleta Infantil",
+      "venta": false,
+      "precio": 30.00,
+      "foto": "bici2.jpg",
+      "tags": [ "lifestyle"]
+    },
+    {
+      "nombre": "Samsung galaxy S8 Edge PlusPlus",
+      "venta": false,
+      "precio": 800.00,
+      "foto": "galaxy.jpg",
+      "tags": [ "mobile"]
+    },
+    {
+      "nombre": "Furgoneta Renault Kangoo",
+      "venta": true,
+      "precio": 5600.00,
+      "foto": "furgoneta2.jpg",
+      "tags": [ "work", "motor"]
+    },
+    {
+      "nombre": "Pulsera de macarrones",
+      "venta": true,
+      "precio": 1.00,
+      "foto": "pulsera2.jpg",
       "tags": [ "lifestyle"]
     }
   ],
