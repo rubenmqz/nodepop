@@ -12,13 +12,11 @@ const anuncioSchema = mongoose.Schema({
 });
 
 // ponemos un método al schema
-//anuncioSchema.statics.list = function(filter, limit, skip, fields, sort, cb) {
-anuncioSchema.statics.list = function(cb) {
-    const query = Anuncio.find({}, '-_id -__v');
-    //query.limit(limit);
-    // query.skip(skip);
-    // query.select(fields);
-    // query.sort(sort);
+anuncioSchema.statics.list = function(filter, limit, skip, sort, cb) {
+    const query = Anuncio.find(filter, '-_id -__v');
+    query.limit(limit);
+    query.skip(skip);
+    query.sort(sort);
     query.exec(cb);
 };
 
