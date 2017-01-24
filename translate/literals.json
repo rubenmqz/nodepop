@@ -1,0 +1,12 @@
+{
+  "literals": {
+    "ERROR": {
+      "es": "¡Error!",
+      "en": "Error!"
+    },
+    "HELLO": {
+      "es": "Hola",
+      "en": "Hello"
+    }
+  }
+}

@@ -50,6 +50,7 @@ router.get('/', function(req, res, next) {
 
     Anuncio.list(filter, limit, skip, sort, function(err, data) {
         if (err) {
+            console.log("Pasa por aquí");
             return next(err);
         }
 
