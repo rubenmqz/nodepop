@@ -1,33 +1,47 @@
 #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
+const cluster = require('cluster');
 
-var app = require('../app');
-var debug = require('debug')('nodepop:server');
-var http = require('http');
+if (cluster.isMaster) {
 
-/**
- * Get port from environment and store in Express.
- */
+  const numCpus = require('os').cpus().length;
 
-var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
+  for (let i = 0; i < numCpus; i++) {
+    console.log("Arrancando cluster", i);
+    cluster.fork();
+  }
 
-/**
- * Create HTTP server.
- */
+} else {
 
-var server = http.createServer(app);
+  /**
+   * Module dependencies.
+   */
 
-/**
- * Listen on provided port, on all network interfaces.
- */
+  var app = require('../app');
+  var debug = require('debug')('nodepop:server');
+  var http = require('http');
 
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+  /**
+   * Get port from environment and store in Express.
+   */
+
+  var port = normalizePort(process.env.PORT || '3000');
+  app.set('port', port);
+
+  /**
+   * Create HTTP server.
+   */
+
+  var server = http.createServer(app);
+
+  /**
+   * Listen on provided port, on all network interfaces.
+   */
+
+  server.listen(port);
+  server.on('error', onError);
+  server.on('listening', onListening);
+}
 
 /**
  * Normalize a port into a number, string, or false.
