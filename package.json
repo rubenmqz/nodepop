@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "debug": "cross-env DEBUG=nodepop:* nodemon ./bin/www",
-    "installDB": "cross-env DEBUG=nodepop:* node ./lib/install_db.js"
+    "installDB": "cross-env DEBUG=nodepop:* node ./lib/install_db.js",
+    "lint": "jshint app.js"
   },
   "dependencies": {
     "async": "^2.1.4",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "cross-env": "^3.1.4",
+    "jshint": "^2.9.4",
     "nodemon": "^1.11.0"
   }
 }
