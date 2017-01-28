@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const localConfig = require('../../localConfig');
 const customError = require('../../lib/customError');
+const sha256 = require('sha256');
 
 const Usuario = mongoose.model('Usuario');
 
@@ -13,7 +14,7 @@ const Usuario = mongoose.model('Usuario');
 router.post('/authenticate', function(req, res, next) {
 
   const email = req.body.email;
-  const password = req.body.password;
+  const password = sha256.x2(req.body.password);
 
   // Buscamos en la base de datos un usuario con userName
   Usuario.find({'email': email, 'clave': password}).exec(function(err, data) {
