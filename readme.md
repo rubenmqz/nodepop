@@ -32,6 +32,14 @@ npm start
 npm run debug
 ```
 
+### Validar código fuente
+Se ha incluido la opcion de validar la calidad del código javascript usando la utilidad JSHint. Para ello, se podrá ejecutar el siguiente comando:
+```bash
+# Validar codigo con JSHint
+npm run lint
+```
+La configuración de JSHint puede verse en el archivo *.jshintrc*.
+
 ### Cargar datos de prueba
 Si quieres cargar datos de prueba, usa el siguiente script, que borrará los datos actuales de "Anuncios" y "Usuarios" de la base de datos, y en su lugar pondrá los que haya definidos en **initialData/data.json**:
 ```bash
@@ -84,6 +92,7 @@ Cada uno de ellos tiene sus particularidades, que se detallan posteriormente, pe
 ### Anuncios
 
 #### Obtener Anuncios 
+Obtiene un listado de anuncios, que se puede personalizar indicando parámetros extra en la querystring.
 ```bash
 GET /apiv1/anuncios
 ```
@@ -100,3 +109,11 @@ Parámetros opcionales:
 - **skip=[x]**: Se salta los "x" primeros elementos, devolviendo únicamente los siguientes
 - **sort=[nombre|precio|venta|tag]**: Ordena los resultados por el campo indicado. Si se quiere invertir el orden, se debe incluir un menos ("-") delante, por ejemplo: *sort=-nombre*
 - **includeTotal=true**: Devuelve un campo extra, con el número total de anuncios devueltos
+
+### Tags
+
+#### Obtener tags 
+Obtiene el listado de tags existentes.
+```bash
+GET /apiv1/tags
+```
