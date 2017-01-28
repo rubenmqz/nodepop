@@ -10,6 +10,8 @@ const usuarioSchema = mongoose.Schema({
     clave: String
 });
 
+usuarioSchema.index({ email: 1, clave: 1}); //para acelerar autenticación
+
 
 // y luego creo el modelo
 
