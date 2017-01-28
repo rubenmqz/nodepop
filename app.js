@@ -37,14 +37,20 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+// client error handler
+app.use(function(err, req, res, next) {
+  if (req.originalUrl.indexOf('/api') === 0) { // llamada de API, respondo JSON
+    res.status(err.status || 500);
+    return res.json({success: false, error: err.message});
+  } else {
+    next(err);
+  }
+});
+
+
 // error handler
 app.use(function(err, req, res) {
-
   res.status(err.status || 500);
-
-  if (req.originalUrl.indexOf('/api') === 0) { // llamada de API, respondo JSON
-    return res.json({success: false, error: err.message});
-  }
 
   // set locals, only providing error in development
   res.locals.message = err.message;

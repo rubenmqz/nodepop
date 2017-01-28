@@ -4,9 +4,17 @@
       "es": "¡Error!",
       "en": "Error!"
     },
-    "HELLO": {
-      "es": "Hola",
-      "en": "Hello"
+    "ERROR_DETAILS": {
+      "es": "Detalles del error",
+      "en": "Error details"
+    },
+    "NO_TOKEN_PROVIDED": {
+      "es": "No has proporcionado un token",
+      "en": "No token provided"
+    },
+    "INVALID_TOKEN": {
+      "es": "Token inválido",
+      "en": "Invalid token"
     }
   }
 }
