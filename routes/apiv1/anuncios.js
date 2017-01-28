@@ -2,8 +2,14 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
+const customError = require('../../lib/customError');
 
 const router = express.Router();
+
+const jwtAuth = require('../../lib/jwtAuth');
+
+router.use(jwtAuth());
+
 const Anuncio = mongoose.model('Anuncio');
 
 /* GET Anuncios */
@@ -50,8 +56,7 @@ router.get('/', function(req, res, next) {
 
     Anuncio.list(filter, limit, skip, sort, function(err, data) {
         if (err) {
-            console.log('Pasa por aquí');
-            return next(err);
+            return next(customError('UNKNOWN_ERROR', req.query.lang, 500, err));
         }
 
         var imagesUrl = req.protocol + '://' + req.get('host') + '/images/anuncios/';

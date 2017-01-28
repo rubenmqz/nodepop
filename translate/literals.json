@@ -8,6 +8,14 @@
       "es": "Detalles del error",
       "en": "Error details"
     },
+    "UNKNOWN_ERROR": {
+      "es": "Se ha producido un error. Vuelve a intentarlo",
+      "en": "There has been an error. Try again please"
+    },
+    "URL_NOT_FOUND": {
+      "es": "URL no encontrada",
+      "en": "URL not found"
+    },
     "NO_TOKEN_PROVIDED": {
       "es": "No has proporcionado un token",
       "en": "No token provided"
@@ -15,6 +23,10 @@
     "INVALID_TOKEN": {
       "es": "Token inválido",
       "en": "Invalid token"
+    },
+    "EMAIL_OR_PASS_NOT_CORRECT": {
+      "es": "Email o contraseña incorrectos",
+      "en": "Email or password are not correct"
     }
   }
 }

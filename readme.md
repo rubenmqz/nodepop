@@ -73,8 +73,8 @@ El formato del archivo data.json deberá ser:
 
 La API dispone de los siguientes **endpoints**:
 
-- **Anuncios** (/apiv1/anuncios): 
 - **Usuarios** (/apiv1/usuarios)
+- **Anuncios** (/apiv1/anuncios): 
 - **Tags** (/apiv1/tags)
 
 Cada uno de ellos tiene sus particularidades, que se detallan posteriormente, pero también comparten una serie características, detalladas a continuación:
@@ -87,6 +87,20 @@ Cada uno de ellos tiene sus particularidades, que se detallan posteriormente, pe
     success: false,
     error: "Detalle del error"
 }
+```
+- **AUTENTICACIÓN**: Es obligatorio estar autenticado para consumir estos recursos (excepto el de "Usuarios"). Para ello, se deberá pasar el token de usuario como un parámetro más, que podrá ir en la querystring como **token=xxxxxxx**, o también en el body, o en una cabecera **x-access-token**. La obtención del token se describe en el apartado "USUARIOS".
+
+
+### Usuarios
+
+#### Autenticar 
+Obtiene un token para un usuario registrado, que le será necesario para realizar cualquier llamada a otros endpoints. Se deben pasar en el body los campos 'email' y 'password'.
+```bash
+POST /apiv1/usuarios/authenticate
+ 
+# Se pueden utilizar los datos del usuario de prueba:
+# email: admin@admin.com
+# password: admin
 ```
 
 ### Anuncios
@@ -117,3 +131,4 @@ Obtiene el listado de tags existentes.
 ```bash
 GET /apiv1/tags
 ```
+
