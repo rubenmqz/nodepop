@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const mongoose = require('mongoose');
 
@@ -25,7 +25,7 @@ const Anuncio = mongoose.model('Anuncio', anuncioSchema);
 
 Anuncio.on('index', function (err) {
    if (err) {
-       return console.log("No se han podido crear los índices para el modelo 'Anuncio'", err)
+       return console.log('No se han podido crear los índices para el modelo "Anuncio"', err);
    }
 });
 

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const mongoose = require('mongoose');
 
@@ -15,9 +15,9 @@ const usuarioSchema = mongoose.Schema({
 
 const Usuario = mongoose.model('Usuario', usuarioSchema);
 
-Usuario.on('index', function (err, aaa) {
+Usuario.on('index', function (err) {
     if (err) {
-        return console.log("No se han podido crear los índices para el modelo 'Usuario'", err)
+        return console.log('No se han podido crear los índices para el modelo "Usuario"', err);
     }
 });
 

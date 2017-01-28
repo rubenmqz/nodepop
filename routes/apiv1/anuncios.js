@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const mongoose = require('mongoose');
 
@@ -20,7 +22,7 @@ router.get('/', function(req, res, next) {
     const filter = {};
 
     if (nombre) {
-        filter.nombre = new RegExp('^' + nombre, "i");
+        filter.nombre = new RegExp('^' + nombre, 'i');
     }
 
     if (precio) {
@@ -28,19 +30,17 @@ router.get('/', function(req, res, next) {
         if (valores.length === 1 && !isNaN(valores[0])) {
             filter.precio = Number(precio);
         } else if (valores.length === 2) {
-            if (!isNaN(valores[0]) && !isNaN(valores[1]) && valores[0]!=="" && valores[1]!=="") {
+            if (!isNaN(valores[0]) && !isNaN(valores[1]) && valores[0]!=='' && valores[1]!=='') {
                 filter.precio = { '$gte': valores[0], '$lte': valores[1] };
-            } else if (!isNaN(valores[0]) && valores[0]!=="") {
+            } else if (!isNaN(valores[0]) && valores[0]!=='') {
                 filter.precio = { '$gte': valores[0] };
-                console.log("gte");
-            } else if (!isNaN(valores[1]) && valores[1]!=="") {
+            } else if (!isNaN(valores[1]) && valores[1]!=='') {
                 filter.precio = { '$lte': valores[1] };
-                console.log("lte");
             }
         }
     }
 
-    if (venta === "true" || venta === "false") {
+    if (venta === 'true' || venta === 'false') {
         filter.venta = venta;
     }
 
@@ -50,7 +50,7 @@ router.get('/', function(req, res, next) {
 
     Anuncio.list(filter, limit, skip, sort, function(err, data) {
         if (err) {
-            console.log("Pasa por aquí");
+            console.log('Pasa por aquí');
             return next(err);
         }
 
@@ -60,12 +60,12 @@ router.get('/', function(req, res, next) {
         }
 
         const resJson = {success: true};
-        if (includeTotal === "true") {
+        if (includeTotal === 'true') {
             resJson.numItems = data.length;
         }
         resJson.data = data;
         res.json(resJson);
-    })
+    });
 });
 
 module.exports = router;

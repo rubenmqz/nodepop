@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "debug": "cross-env DEBUG=nodepop:* nodemon ./bin/www",
     "installDB": "cross-env DEBUG=nodepop:* node ./lib/install_db.js",
-    "lint": "jshint app.js"
+    "lint": "jshint . bin/www --exclude node_modules/"
   },
   "dependencies": {
     "async": "^2.1.4",
