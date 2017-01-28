@@ -24,9 +24,25 @@
       "es": "Token inválido",
       "en": "Invalid token"
     },
+    "INCOMPLETE_LOGIN_DATA": {
+      "es": "No has indicado todos los campos necesarios (email y password)",
+      "en": "You have not specified all fields (email and password)"
+    },
     "EMAIL_OR_PASS_NOT_CORRECT": {
       "es": "Email o contraseña incorrectos",
       "en": "Email or password are not correct"
+    },
+    "INCOMPLETE_USER_DATA": {
+      "es": "No has indicado todos los campos del usuario (nombre, email y clave)",
+      "en": "You have not sent all user fields (nombre, email and clave)"
+    },
+    "INVALID_EMAIL": {
+      "es": "El e-mail indicado no es correcto",
+      "en": "Email sent is invalid"
+    },
+    "EMAIL_EXISTS": {
+      "es": "El e-mail indicado ya existe",
+      "en": "Email sent does exist"
     }
   }
 }

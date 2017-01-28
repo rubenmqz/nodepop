@@ -93,6 +93,12 @@ Cada uno de ellos tiene sus particularidades, que se detallan posteriormente, pe
 
 ### Usuarios
 
+#### Registrar 
+Registra un nuevo usuario en la aplicación. Se deben pasar en el body los campos 'nombre', 'email' y 'password'.
+```bash
+POST /apiv1/usuarios/
+```
+
 #### Autenticar 
 Obtiene un token para un usuario registrado, que le será necesario para realizar cualquier llamada a otros endpoints. Se deben pasar en el body los campos 'email' y 'password'.
 ```bash
