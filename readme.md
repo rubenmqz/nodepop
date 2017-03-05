@@ -3,6 +3,11 @@
 
 API para la aplicación Nodepop, realizada con node.js, para la práctica del curso de MEAN de Keepcoding
 
+## ACTUALIZACIÓN: Práctica desplegada
+
+Desde el 05/03/2017 puede verse y probarse un despliegue de la practica en la url **node.oncetios.es
+(cambiando "once" por el número "11")**. Los distintos endpoints funcionan tal como se define en los siguientes puntos.
+
 ## REQUISITOS E INSTALACIÓN
 
 - node.js >=6.9.4 (no probado en versiones anteriores)
